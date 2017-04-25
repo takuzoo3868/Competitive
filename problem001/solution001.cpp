@@ -1,7 +1,5 @@
 #include <iostream>
-#include <math.h>
-
-using namespace std;
+#include <bits/stdc++.h>
 
 int main() {
   int sum = 0;
