@@ -1,3 +1,10 @@
+/* 
+ * Find the sum of all the multiples of 3 or 5 below 1000
+ * 1000 未満の 3 か 5 の倍数の和
+ * Auther: takuzoo3868
+ * Last Modified: 29/Apr/2017
+ */
+
 #include <iostream>
 #include <math.h>
 
@@ -11,7 +18,7 @@ int main() {
       sum += i;
     }
   }
-  std::cout << sum << std::endl;
+  cout << sum << endl;
   
   return 0;
 }
