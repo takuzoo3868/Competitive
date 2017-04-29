@@ -9,21 +9,31 @@
 
 using namespace std;
 
+int fibonacci(int n) {
+  int f0 = 0;
+  int f1 = 1;
+  int fn = 0;
+  
+  for (int i = 1; i <= n; i++) {
+    fn = f0 + f1;
+    f0 = f1;
+    f1 = fn;
+  }
+  return fn;
+}
+
 int main() {
   int sum = 0;
+  int num = 0;
   
   int i = 1;
-  int j = 1;
-  int k;
-  
-  while(j <= 4000000) {
-    if(j % 2 == 0) {
-      sum += j;
+  while (num <= 4000000) {
+    num = fibonacci(i);
+    // 偶数値判定
+    if (num % 2 == 0){
+      sum = sum + num;
     }
-    
-    k = j;
-    j += i;
-    i = k;
+    i++;
   }
   cout << sum << endl;
   
