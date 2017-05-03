@@ -1,4 +1,4 @@
-/* 
+/*
  * Find the largest palindromic number made from the product of two 3 digit numbers
  * 回文数の最大値を求める
  * Auther: takuzoo3868
@@ -6,8 +6,6 @@
  */
 
 #include <iostream>
-#include <fstream>
-#include <string>
 #include <sstream>
 
 using namespace std;
@@ -21,16 +19,16 @@ string intToString(int numb) {
 int check(int n) {
   int i, j;
   string sss = intToString(n);
-  
+
   for (i = 0, j = sss.length() -1 ; i <= j; i++, j--) {
-    if (sss[i] != sss[j]) { 
+    if (sss[i] != sss[j]) {
       return 0;
     }
   }
   return 1;
 }
 
-int main() {
+int solution004() {
   int num;
   int max = 0;
 
@@ -39,12 +37,12 @@ int main() {
       num = a * b;
       if (check(num) == 1) {
         if (num > max) {
-          max = num; 
+          max = num;
         }
       }
     }
   }
   cout << max << endl;
-  
+
   return 0;
 }

@@ -1,4 +1,4 @@
-/* 
+/*
  * Find the largest prime factor of 600851475143
  * 最大素因数を求める
  * Auther: takuzoo3868
@@ -9,11 +9,11 @@
 
 using namespace std;
 
-int main() {
+int solution003() {
   long long num = 600851475143;
   long long factors = 2;
   long long primeFactors;
-  
+
   while (factors *factors < 600851475143){
     while (num % factors == 0){
       num = num / factors;
@@ -22,7 +22,6 @@ int main() {
     factors += 1;
   }
   cout << primeFactors << endl;
-  
+
   return 0;
 }
-
