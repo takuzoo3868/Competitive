@@ -18,6 +18,9 @@ int solve(int num) {
         case 5:
             solution005();
             break;
+        case 6:
+            solution006();
+            break;
         default:
             std::cout << "have not solved it yet!!!" << std::endl;
             break;

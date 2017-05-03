@@ -8,7 +8,7 @@
 #include <iostream>
 #include <chrono>
 
-#define MAX 5 // Maximum problem number solved
+#define MAX 6 // Maximum problem number solved
 
 using namespace std;
 
@@ -20,6 +20,7 @@ int main() {
         cin >> num;
         if (1 <= num && num <= MAX) break;
     }
+
 
     // Save measurement start time
     auto start = std::chrono::system_clock::now();

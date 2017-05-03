@@ -12,6 +12,6 @@ set(CMAKE_CXX_STANDARD 14)
 set(SOURCE_FILES
         src/main.cpp
         src/solve.cpp
-        src/solution001.cpp src/solution002.cpp src/solution003.cpp src/solution004.cpp src/solution005.cpp)
+        src/solution001.cpp src/solution002.cpp src/solution003.cpp src/solution004.cpp src/solution005.cpp src/solution006.cpp)
 
 add_executable(ProjectEuler ${SOURCE_FILES} src/main.h)
