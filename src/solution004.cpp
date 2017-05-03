@@ -1,4 +1,5 @@
 /*
+ * Problem 4: Largest palindrome product
  * Find the largest palindromic number made from the product of two 3 digit numbers
  * 回文数の最大値を求める
  * Auther: takuzoo3868

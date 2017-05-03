@@ -1,4 +1,5 @@
 /*
+ * Problem 5: Smallest multiple
  * What is the smallest number evenly divisible by 1 up to 20
  * 1 から 20で割り切れる最小の倍数を求める
  * Auther: takuzoo3868
