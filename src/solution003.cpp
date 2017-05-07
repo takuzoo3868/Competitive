@@ -15,8 +15,8 @@ int solution003() {
   long long factors = 2;
   long long primeFactors;
 
-  while (factors *factors < 600851475143){
-    while (num % factors == 0){
+  while (factors * factors < 600851475143) {
+    while (num % factors == 0) {
       num = num / factors;
       primeFactors = factors;
     }

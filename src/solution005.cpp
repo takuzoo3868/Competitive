@@ -26,11 +26,11 @@ long lcm(long a, long b) {
 }
 
 int solution005() {
-  long LCM = 20;
+    long LCM = 20;
     for (long num = LCM - 1; num > 1; --num) {
         LCM = lcm(LCM, num);
     }
-  cout << LCM << endl;
+    cout << LCM << endl;
 
-  return 0;
+    return 0;
 }

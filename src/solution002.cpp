@@ -11,32 +11,32 @@
 using namespace std;
 
 int fibonacci(int n) {
-  int f0 = 0;
-  int f1 = 1;
-  int fn = 0;
+    int f0 = 0;
+    int f1 = 1;
+    int fn = 0;
 
-  for (int i = 1; i <= n; i++) {
-    fn = f0 + f1;
-    f0 = f1;
-    f1 = fn;
-  }
-  return fn;
+    for (int i = 1; i <= n; i++) {
+        fn = f0 + f1;
+        f0 = f1;
+        f1 = fn;
+    }
+    return fn;
 }
 
 int solution002() {
-  int sum = 0;
-  int num = 0;
+    int sum = 0;
+    int num = 0;
 
-  int i = 1;
-  while (num <= 4000000) {
-    num = fibonacci(i);
-    // 偶数値判定
-    if (num % 2 == 0){
-      sum = sum + num;
+    int i = 1;
+    while (num <= 4000000) {
+        num = fibonacci(i);
+        // 偶数値判定
+        if (num % 2 == 0) {
+            sum = sum + num;
+        }
+        i++;
     }
-    i++;
-  }
-  cout << sum << endl;
+    cout << sum << endl;
 
-  return 0;
+    return 0;
 }

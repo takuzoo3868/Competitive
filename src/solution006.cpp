@@ -19,7 +19,7 @@ int solution006() {
         a = a + num * num;
         b = b + num;
     }
-    diff = b*b - a;
+    diff = b * b - a;
     cout << diff << endl;
 
     return 0;
