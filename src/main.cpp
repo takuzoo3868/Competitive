@@ -8,7 +8,7 @@
 #include <iostream>
 #include <chrono>
 
-#define MAX 6 // Maximum problem number solved
+#define MAX 8 // Maximum problem number solved
 
 using namespace std;
 
@@ -23,17 +23,17 @@ int main() {
 
 
     // Save measurement start time
-    auto start = std::chrono::system_clock::now();
+    std::chrono::time_point<std::chrono::system_clock> start, end;
+    start = std::chrono::system_clock::now();
 
     solve(num);
 
     // Save measurement end time
-    auto end = std::chrono::system_clock::now();
+    end = std::chrono::system_clock::now();
     // Calculation of processing time
-    auto dur = end - start;
-    auto micro = std::chrono::duration_cast<std::chrono::microseconds>(dur).count();
+    std::chrono::duration<double> elapsed_seconds = end - start;
     // Output in microseconds
-    std::cout << "Elapsed time: " << micro << " micro sec \n";
+    std::cout << "Elapsed time: " << elapsed_seconds.count() << " sec \n";
 
     return 0;
 }
