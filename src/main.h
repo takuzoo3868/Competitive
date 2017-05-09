@@ -10,5 +10,7 @@ int solution005();
 int solution006();
 int solution007();
 int solution008();
+int solution009();
+int solution010();
 
 #endif //PROJECTEULER_MAIN_H

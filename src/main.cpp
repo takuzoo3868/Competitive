@@ -8,7 +8,7 @@
 #include <iostream>
 #include <chrono>
 
-#define MAX 8 // Maximum problem number solved
+#define MAX 10 // Maximum problem number solved
 
 using namespace std;
 
