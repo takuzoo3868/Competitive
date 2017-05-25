@@ -7,6 +7,7 @@
  */
 
 #include <iostream>
+#include <chrono>
 
 using namespace std;
 
@@ -23,9 +24,13 @@ int fibonacci(int n) {
     return fn;
 }
 
-int solution002() {
+int main() {
     int sum = 0;
     int num = 0;
+
+    // Save measurement start time
+    std::chrono::time_point<std::chrono::system_clock> start, end;
+    start = std::chrono::system_clock::now();
 
     int i = 1;
     while (num <= 4000000) {
@@ -37,6 +42,13 @@ int solution002() {
         i++;
     }
     cout << sum << endl;
+
+    // Save measurement end time
+    end = std::chrono::system_clock::now();
+    // Calculation of processing time
+    std::chrono::duration<double> elapsed_seconds = end - start;
+    // Output in microseconds
+    std::cout << "Elapsed time: " << elapsed_seconds.count() << " sec \n";
 
     return 0;
 }

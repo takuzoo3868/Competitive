@@ -7,6 +7,7 @@
  */
 
 #include <iostream>
+#include <chrono>
 
 using namespace std;
 
@@ -32,7 +33,18 @@ long LargestPalindrome(long num) {
     return 0;
 }
 
-int solution004() {
+int main() {
+    // Save measurement start time
+    std::chrono::time_point<std::chrono::system_clock> start, end;
+    start = std::chrono::system_clock::now();
+
     std::cout << LargestPalindrome(999 * 999) << std::endl;
+
+    // Save measurement end time
+    end = std::chrono::system_clock::now();
+    // Calculation of processing time
+    std::chrono::duration<double> elapsed_seconds = end - start;
+    // Output in microseconds
+    std::cout << "Elapsed time: " << elapsed_seconds.count() << " sec \n";
     return 0;
 }

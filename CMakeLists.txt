@@ -9,11 +9,28 @@ endif()
 
 set(CMAKE_CXX_STANDARD 14)
 
-set(SOURCE_FILES
-        src/main.cpp
-        src/solve.cpp
-        src/solution001.cpp src/solution002.cpp src/solution003.cpp src/solution004.cpp src/solution005.cpp
-        src/solution006.cpp src/solution007.cpp src/solution008.cpp src/solution009.cpp src/solution010.cpp
-        src/solution011.cpp)
+# サブディレクトリ内のソースをすべてプロジェクトに入れるマクロ
+MACRO(ADD_ALL_SUBDIR result curdir)
+    FILE(GLOB children RELATIVE ${curdir} ${curdir}/*)
+    SET(dirlist "")
+    FOREACH(child ${children})
+        IF(IS_DIRECTORY ${curdir}/${child})
+            LIST(APPEND dirlist ${child})
+            # CMakeがディレクトリにあるか(1のパターン)無いか(2のパターン)で分岐
+            IF(EXISTS ${curdir}/${child}/CMakeLists.txt)
+                add_subdirectory(${child})
+            ELSE()
+                aux_source_directory(${child} SOURCE)
+            ENDIF()
+        ENDIF()
+    ENDFOREACH()
+    SET(${result} ${dirlist})
+ENDMACRO()
 
-add_executable(ProjectEuler ${SOURCE_FILES} src/main.h)
+ADD_ALL_SUBDIR(SUBDIRS ${ProjectEuler_SOURCE_DIR})
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
+
+IF(SOURCE)
+    add_executable(PROJECTEULER ${SOURCE})
+ENDIF()

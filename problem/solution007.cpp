@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include <cmath>
+#include <chrono>
 
 #define ORDINAL 10001
 
@@ -28,10 +29,14 @@ bool IsPrime(int num) {
     return true;
 }
 
-int solution007() {
+int main() {
     int integer = 0; // 整数を格納
     int count = 0;   // 素数をカウント
     int prime;       // 素数を格納
+
+    // Save measurement start time
+    std::chrono::time_point<std::chrono::system_clock> start, end;
+    start = std::chrono::system_clock::now();
 
     while (1) {
         if (IsPrime(integer)) {
@@ -42,6 +47,13 @@ int solution007() {
         if (count == ORDINAL) break;
     }
     cout << prime << endl;
+
+    // Save measurement end time
+    end = std::chrono::system_clock::now();
+    // Calculation of processing time
+    std::chrono::duration<double> elapsed_seconds = end - start;
+    // Output in microseconds
+    std::cout << "Elapsed time: " << elapsed_seconds.count() << " sec \n";
 
     return 0;
 }

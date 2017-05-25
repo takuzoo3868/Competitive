@@ -8,10 +8,11 @@
 
 #include <iostream>
 #include <array>
+#include <chrono>
 
 using namespace std;
 
-int solution011() {
+int main() {
     int MAX = 0;
     const size_t Size = 20;
     const size_t Length = 4;
@@ -38,6 +39,10 @@ int solution011() {
                     20, 73, 35, 29, 78, 31, 90, 1, 74, 31, 49, 71, 48, 86, 81, 16, 23, 57, 5, 54,
                     1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48
             };
+
+    // Save measurement start time
+    std::chrono::time_point<std::chrono::system_clock> start, end;
+    start = std::chrono::system_clock::now();
 
     // 横の探索
     for (size_t y = 0; y < Size; ++y) {
@@ -86,6 +91,13 @@ int solution011() {
         }
     }
     cout << MAX << endl;
+
+    // Save measurement end time
+    end = std::chrono::system_clock::now();
+    // Calculation of processing time
+    std::chrono::duration<double> elapsed_seconds = end - start;
+    // Output in microseconds
+    std::cout << "Elapsed time: " << elapsed_seconds.count() << " sec \n";
 
     return 0;
 }

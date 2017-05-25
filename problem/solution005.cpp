@@ -7,6 +7,7 @@
  */
 
 #include <iostream>
+#include <chrono>
 
 using namespace std;
 
@@ -25,12 +26,24 @@ long lcm(long a, long b) {
     return a * (b / gcd(a, b));
 }
 
-int solution005() {
+int main() {
     long LCM = 20;
+
+    // Save measurement start time
+    std::chrono::time_point<std::chrono::system_clock> start, end;
+    start = std::chrono::system_clock::now();
+
     for (long num = LCM - 1; num > 1; --num) {
         LCM = lcm(LCM, num);
     }
     cout << LCM << endl;
+
+    // Save measurement end time
+    end = std::chrono::system_clock::now();
+    // Calculation of processing time
+    std::chrono::duration<double> elapsed_seconds = end - start;
+    // Output in microseconds
+    std::cout << "Elapsed time: " << elapsed_seconds.count() << " sec \n";
 
     return 0;
 }

@@ -10,6 +10,7 @@
 #include <vector>
 #include <cmath>
 #include <numeric>
+#include <chrono>
 
 #define N 2000000
 
@@ -43,12 +44,23 @@ void sieve(vector<int> &primes, int max) {
     }
 }
 
-int solution010() {
+int main() {
+    // Save measurement start time
+    std::chrono::time_point<std::chrono::system_clock> start, end;
+    start = std::chrono::system_clock::now();
+
     vector<int> primes; // 素数を格納する動的配列
 
     sieve(primes, N);
     double sum = accumulate(primes.begin(), primes.end(), 0.0);
     cout << (long long) sum << endl;
+
+    // Save measurement end time
+    end = std::chrono::system_clock::now();
+    // Calculation of processing time
+    std::chrono::duration<double> elapsed_seconds = end - start;
+    // Output in microseconds
+    std::cout << "Elapsed time: " << elapsed_seconds.count() << " sec \n";
 
     return 0;
 }
