@@ -1,6 +1,6 @@
 /*
  * Problem 15: Lattice paths
- * Find the number of routes through a 20×20 grid
+ * Calculate the number of ways of traversing a 20 by 20 grid
  * 経路数
  * Author: takuzoo3868
  * Last Modified: 14/Sep/2017
