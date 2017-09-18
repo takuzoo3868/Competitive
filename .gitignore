@@ -1,0 +1,10 @@
+# IntelliJ project files
+.idea
+out
+gen
+
+# other files
+**/test
+**/*.out
+*.test
+*.swp
