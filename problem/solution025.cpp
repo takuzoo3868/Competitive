@@ -28,7 +28,7 @@ int main() {
             a[j] = b[j];
             b[j] += tmp[j];
         }
-        
+
         for (int j = 0; j < 1000; j++) {
             if (a[j] >= 10) {
                 a[j + 1] += a[j] / 10;
