@@ -2,9 +2,12 @@
 .idea
 out
 gen
+.vscode
 
 # other files
 **/test
 **/*.out
 *.test
 *.swp
+
+Atcoder/**/astyle.sh
