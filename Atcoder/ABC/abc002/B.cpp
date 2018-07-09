@@ -12,7 +12,7 @@ int main() {
     cin >> W;
 
     REP(i, W.size()) {
-        if(W[i] != 'a' && W[i] != 'i' && W[i] != 'u' && W[i] != 'e' && W[i] != 'o') {
+        if (W[i] != 'a' && W[i] != 'i' && W[i] != 'u' && W[i] != 'e' && W[i] != 'o') {
             cout << W[i];
         }
     }
