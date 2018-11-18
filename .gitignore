@@ -13,4 +13,4 @@ gen
 # ref
 **/*.pdf
 
-Atcoder/**/astyle.sh
+**/astyle.sh
