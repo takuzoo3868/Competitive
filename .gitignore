@@ -10,4 +10,7 @@ gen
 *.test
 *.swp
 
+# ref
+**/*.pdf
+
 Atcoder/**/astyle.sh
